@@ -26,7 +26,7 @@ public class Main {
 
 			connection.eval("library(\"Cairo\")");
 			connection.eval(
-					"Cairo(file=\"/home/testfile2.jpg\",type=\"png\",units=\"px\", width=400, height=300, pointsize=12, dpi=\"auto\")");
+					"Cairo(file=\"/home/testfile2.jpg\",type=\"png\",bg=\"white\",units=\"px\", width=400, height=300, pointsize=12, dpi=\"auto\")");
 			connection.eval("hist(airquality$Temp)");
 			connection.eval("dev.off()");
 
@@ -44,8 +44,7 @@ public class Main {
 			System.out.println("resultat script: " + is_aba_palindrome.asInteger());
 
 			connection.eval("source(\"/home/graph2.r\")");
-			connection.eval("dessine");
-
+		 
 		} catch (RserveException e) {
 			e.printStackTrace();
 		} catch (REXPMismatchException e) {
