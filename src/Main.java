@@ -20,13 +20,13 @@ public class Main {
 			String vector = "c(1,2,3,4)";
 			connection.eval("sumVal=sum(" + vector + ")");
 
-			connection.eval("pdf(file=\"/home/histogram1.pdf\")");
+			connection.eval("pdf(file=\"/home/R/plots/histogram1.pdf\")");
 			connection.eval("hist(airquality$Temp)");
 			connection.eval("dev.off()");
 
 			connection.eval("library(\"Cairo\")");
 			connection.eval(
-					"Cairo(file=\"/home/testfile2.jpg\",type=\"png\",bg=\"white\",units=\"px\", width=400, height=300, pointsize=12, dpi=\"auto\")");
+					"Cairo(file=\"/home/R/plots/testfile2.jpg\",type=\"png\",bg=\"white\",units=\"px\", width=400, height=300, pointsize=12, dpi=\"auto\")");
 			connection.eval("hist(airquality$Temp)");
 			connection.eval("dev.off()");
 
@@ -39,11 +39,11 @@ public class Main {
 				System.out.println(t + " = " + nm[t]);
 			}
 
-			connection.eval("source(\"/home/graph.r\")");
+			connection.eval("source(\"/home/R/utils/graph.r\")");
 			REXP is_aba_palindrome = connection.eval("palindrome(20)");
 			System.out.println("resultat script: " + is_aba_palindrome.asInteger());
 
-			connection.eval("source(\"/home/graph2.r\")");
+			connection.eval("source(\"/home/R/utils/graph2.r\")");
 		 
 		} catch (RserveException e) {
 			e.printStackTrace();
